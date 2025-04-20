@@ -7,3 +7,25 @@ body {
     margin-inline: max(1em, (100% - 100ch) / 2);
     padding: 1rem 0;
   }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 1rem;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  justify-content: center;
+}
+nav a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
