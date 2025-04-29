@@ -28,6 +28,7 @@ for (let p of pages) {
 }
 
 let navLinks = $$("nav a");
+let currentPath = location.pathname.endsWith("/") ? location.pathname + "index.html" : location.pathname;
 let currentLink = navLinks.find(
   (a) => a.host === location.host && a.pathname === location.pathname
 );
