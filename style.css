@@ -1,3 +1,6 @@
+html {
+  color-scheme: light dark;
+}
 body {
     font: 100%/1.5 system-ui;
     max-width: 100ch;
@@ -12,14 +15,13 @@ img {
   margin-top: 1rem;
 }
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+  
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
-  padding: 1rem 0;
-  border-bottom: 1px solid #ccc;
-  justify-content: center;
+  gap: 1rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
   font-weight: bold;
 }
 
