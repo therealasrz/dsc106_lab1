@@ -1,8 +1,11 @@
 html {
   color-scheme: light dark;
+  --color-accent: oklch(65% 50% 0);
 }
 body {
     font: 100%/1.5 system-ui;
+    color: canvastext;
+    background-color: canvas;
     max-width: 100ch;
     margin-inline: max(1em, (100% - 100ch) / 2);
     padding: 1rem 0;
@@ -16,12 +19,12 @@ img {
 }
 nav {
   --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
   
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
   font-weight: bold;
 }
 
@@ -31,14 +34,14 @@ nav a {
   text-decoration: none;      
   color: inherit;              
   padding: 0.5em 0;            
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 nav a:hover {
-  background-color: oklch(95% 5% 200); 
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em; 
-  background-color: oklch(95% 5% 200); 
 }
 
 nav a.current {
@@ -116,6 +119,12 @@ h2 {
   padding-bottom: 0.25em;
 }
 
+p {
+  color: var(--color-accent);
+  border-bottom: 2px solid oklch(80% 3% 200);
+  padding-bottom: 0.25em;
+}
+
 h3 {
   font-size: 1.25rem;
   margin: 0.5rem 0 0.25rem;
@@ -125,4 +134,17 @@ time {
   font-style: italic;
   color: #666;
   font-size: 0.9rem;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+  z-index: 9999;
+}
+
+.color-scheme select {
+  font: inherit;
 }
