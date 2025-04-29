@@ -9,10 +9,10 @@ const BASE_PATH = (location.hostname === "localhost" || location.hostname === "1
   : "/dsc106_lab1/";    
 
   let pages = [
-    { url: "/dsc106_lab1/index.html", title: "Home" },
-    { url: "/dsc106_lab1/projects/index.html", title: "Projects" },
-    { url: "/dsc106_lab1/contact/index.html", title: "Contact" },
-    { url: "/dsc106_lab1/resume/index.html", title: "Resume" },
+    { url: "index.html", title: "Home" },
+    { url: "projects/index.html", title: "Projects" },
+    { url: "contact/index.html", title: "Contact" },
+    { url: "resume/index.html", title: "Resume" },
     { url: "https://github.com/therealasrz", title: "GitHub" }
   ];
 
