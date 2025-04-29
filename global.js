@@ -4,13 +4,17 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-let pages = [
-  { url: "index.html", title: "Home" },
-  { url: "projects/index.html", title: "Projects" },
-  { url: "contact/index.html", title: "Contact" },
-  { url: "resume/index.html", title: "Resume" },
-  { url: "https://github.com/therealasrz", title: "GitHub" }
-];
+const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+  ? "../"                   
+  : "/dsc106_lab1/";
+
+  let pages = [
+    { url: "index.html", title: "Home" },
+    { url: "projects/index.html", title: "Projects" },
+    { url: "contact/index.html", title: "Contact" },
+    { url: "resume/index.html", title: "Resume" },
+    { url: "https://github.com/therealasrz", title: "GitHub" }
+  ];
 
 let nav = document.createElement("nav");
 document.body.prepend(nav);
@@ -27,3 +31,4 @@ let currentLink = navLinks.find(
   (a) => a.host === location.host && a.pathname === location.pathname
 );
 currentLink?.classList.add("current");
+
