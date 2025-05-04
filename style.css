@@ -148,3 +148,24 @@ time {
 .color-scheme select {
   font: inherit;
 }
+
+#profile-stats dl.github-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+  text-align: center;
+  background: oklch(95% 3% 250 / 40%);
+  padding: 1em;
+  border-radius: 0.5em;
+  font-size: 0.9rem;
+}
+
+#profile-stats dt {
+  font-weight: bold;
+  grid-row: 1;
+}
+
+#profile-stats dd {
+  margin: 0;
+  grid-row: 2;
+}

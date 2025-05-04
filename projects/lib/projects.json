@@ -1,68 +1,75 @@
 [
     {
-        "title": "Updated Project Title!",
-        "image": "https://static.wikia.nocookie.net/kboy-group/images/1/1d/CHENLE_icon.png",
-        "description": "This one was updated."
-    },
-    
-    {
-        "title": "Lorem ipsum dolor sit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eius magnam facilis doloribus esse! Eum cum alias placeat reiciendis saepe quidem, totam quam beatae animi enim, laudantium voluptate harum fugit."
+      "title": "Resume Website",
+      "year": "2024",
+      "image": "images/image1.jpg",
+      "description": "A personal portfolio website showcasing academic projects and resume."
     },
     {
-        "title": "Iure minima expedita necessitatibus.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ipsum aliquam aspernatur optio deserunt porro, perferendis quo voluptatum error sed explicabo maxime, fugit labore et officiis cumque animi reiciendis laboriosam fugiat! Reiciendis deserunt cum laboriosam expedita aliquid modi tempora."
+      "title": "Data Visualization Lab",
+      "year": "2024",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Visualized food nutrition data using bar charts and scatter plots."
     },
     {
-        "title": "Sit facilis libero laudantium?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Veniam dolor sit doloribus ad adipisci quod? Sint assumenda dolore enim incidunt quod provident est nisi fuga officiis porro iure, nulla recusandae eius pariatur soluta. Iste recusandae quaerat deserunt facilis."
+      "title": "Contact Form UX",
+      "year": "2024",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Enhanced form usability and accessibility for a better user experience."
     },
     {
-        "title": "Explicabo, beatae. Sequi, reprehenderit!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ipsa, nemo aspernatur. Reiciendis impedit natus, omnis non commodi fuga iusto facilis, at tempora sunt, doloremque quis. Explicabo aliquid harum possimus autem ab deleniti, similique velit! Libero illum impedit tempore."
+      "title": "Final Data Story Project",
+      "year": "2023",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Told a visual data story using JSON, grid layout, and charting libraries."
     },
     {
-        "title": "Dolorum placeat ratione tenetur?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Repellendus beatae harum sequi quis debitis rem saepe officiis! Atque, in. Atque alias dignissimos eveniet sequi? Deserunt totam atque dicta! Eum iste nostrum quaerat incidunt nulla doloribus consequatur nesciunt assumenda."
+      "title": "Survey Analysis",
+      "year": "2023",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Analyzed class survey data using Python and created visual reports."
     },
     {
-        "title": "Amet animi odio debitis.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Debitis, sed facere nam eaque molestias odio dolores saepe vitae architecto, sint sequi facilis, nulla vero? Repellat assumenda laudantium ipsam ad numquam. Non quam, quia possimus iure delectus a tempore!"
+      "title": "React Weather App",
+      "year": "2022",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Built a weather app using React that pulls real-time data from an API."
     },
     {
-        "title": "Fugit doloremque necessitatibus ipsum?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Fugit voluptates eum, ducimus voluptatibus provident sed rem eius accusamus rerum illo! Mollitia ratione facilis corrupti necessitatibus impedit praesentium incidunt eum suscipit placeat provident sunt, nam expedita dolore molestiae distinctio?"
+      "title": "AI Chatbot Demo",
+      "year": "2022",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Designed a basic chatbot with simple NLP capabilities using Python."
     },
     {
-        "title": "Fugiat animi nostrum alias?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "At, id accusantium! Voluptate eos quod velit? Possimus modi at, exercitationem veritatis minus ea, tenetur nulla porro nesciunt laborum deserunt beatae vitae debitis sapiente, sint sit aperiam libero ipsa! Ad."
+      "title": "Stock Tracker",
+      "year": "2022",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Tracked stock trends and built visualizations using pandas and Plotly."
     },
     {
-        "title": "Voluptate atque sint fugit!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Atque ex repellendus, nam quo doloremque alias modi nisi sit maxime eaque at laudantium accusantium in rerum dolorum quod quas perspiciatis sed labore veritatis minima! Laborum aperiam officia suscipit hic."
+      "title": "CSS Animation Practice",
+      "year": "2021",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Practiced advanced CSS techniques with animations and transitions."
     },
     {
-        "title": "Alias voluptates deleniti id?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Odio obcaecati consectetur hic quasi illum cum vitae animi similique architecto assumenda, repellendus mollitia eos? Pariatur explicabo commodi officia. Exercitationem perspiciatis nulla, blanditiis molestias iste tempora. Sed, velit qui. Molestiae."
+      "title": "Javascript DOM Game",
+      "year": "2021",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Created a mini browser game using event listeners and DOM manipulation."
     },
     {
-        "title": "Tenetur quidem doloribus eum!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Delectus, ad quod? Quaerat ipsa natus eos quidem non labore error quis animi, qui reprehenderit rerum aliquid hic? Expedita doloribus facere, rerum earum cumque ab libero laudantium alias illum. Cum."
+      "title": "Python Web Scraper",
+      "year": "2021",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Built a tool to scrape articles from news websites using BeautifulSoup."
     },
     {
-        "title": "Aut modi est consectetur!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Soluta ducimus officia porro vitae magnam officiis possimus ullam incidunt nostrum tempore dolores aperiam assumenda quidem autem, facere amet, voluptate expedita eligendi eum. Deleniti asperiores iusto quo, id eos fugiat!"
+      "title": "Intro to SQL Project",
+      "year": "2020",
+      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "description": "Created SQL queries to analyze sales and customer data for a fictional company."
     }
-]
+  ]
+  
