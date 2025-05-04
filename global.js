@@ -103,29 +103,18 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     return;
   }
 
-  if (!(containerElement instanceof Element)) {
-    console.error("renderProjects error: 'containerElement' is not a valid DOM element.");
-    return;
-  }
-
-  const validHeadings = ['h1','h2','h3','h4','h5','h6'];
-  if (!validHeadings.includes(headingLevel)) {
-    console.warn(`Invalid headingLevel '${headingLevel}' provided. Defaulting to h2.`);
-    headingLevel = 'h2';
-  }
-
   containerElement.innerHTML = '';
 
-  for (const project of projects) {
+  for (let project of projects) {
     const article = document.createElement('article');
-    const title = project.title ?? 'Untitled Project';
-    const image = project.image ?? '';
-    const description = project.description ?? 'No description available.';
 
     article.innerHTML = `
-      <${headingLevel}>${title}</${headingLevel}>
-      ${image ? `<img src="${image}" alt="${title}">` : ''}
-      <p>${description}</p>
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <div class="project-text">
+        <p>${project.description}</p>
+        <p class="project-year">${project.year}</p>
+      </div>
     `;
 
     containerElement.appendChild(article);

@@ -2,73 +2,73 @@
     {
       "title": "Resume Website",
       "year": "2024",
-      "image": "images/image1.jpg",
+      "image": "../images/image1.jpg",
       "description": "A personal portfolio website showcasing academic projects and resume."
     },
     {
       "title": "Data Visualization Lab",
       "year": "2024",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image2.jpg",
       "description": "Visualized food nutrition data using bar charts and scatter plots."
     },
     {
       "title": "Contact Form UX",
       "year": "2024",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image3.jpg",
       "description": "Enhanced form usability and accessibility for a better user experience."
     },
     {
       "title": "Final Data Story Project",
       "year": "2023",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image4.jpg",
       "description": "Told a visual data story using JSON, grid layout, and charting libraries."
     },
     {
       "title": "Survey Analysis",
       "year": "2023",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image5.jpg",
       "description": "Analyzed class survey data using Python and created visual reports."
     },
     {
       "title": "React Weather App",
       "year": "2022",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image6.jpg",
       "description": "Built a weather app using React that pulls real-time data from an API."
     },
     {
       "title": "AI Chatbot Demo",
       "year": "2022",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image7.jpg",
       "description": "Designed a basic chatbot with simple NLP capabilities using Python."
     },
     {
       "title": "Stock Tracker",
       "year": "2022",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image8.jpg",
       "description": "Tracked stock trends and built visualizations using pandas and Plotly."
     },
     {
       "title": "CSS Animation Practice",
       "year": "2021",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image9.jpg",
       "description": "Practiced advanced CSS techniques with animations and transitions."
     },
     {
       "title": "Javascript DOM Game",
       "year": "2021",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image10.jpg",
       "description": "Created a mini browser game using event listeners and DOM manipulation."
     },
     {
       "title": "Python Web Scraper",
       "year": "2021",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image11.jpg",
       "description": "Built a tool to scrape articles from news websites using BeautifulSoup."
     },
     {
       "title": "Intro to SQL Project",
       "year": "2020",
-      "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+      "image": "../images/image12.jpg",
       "description": "Created SQL queries to analyze sales and customer data for a fictional company."
     }
   ]

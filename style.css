@@ -169,3 +169,73 @@ time {
   margin: 0;
   grid-row: 2;
 }
+
+.project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.project-year {
+  font-family: Baskerville, serif;
+  color: gray;
+  font-variant-numeric: oldstyle-nums;
+  font-size: 0.9em;
+  margin-top: -0.25em;
+}
+
+.chart-container {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-block: 2em;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  list-style: none;
+  padding: 1em;
+  border: 1px solid oklch(80% 3% 200 / 30%);
+  font-family: 'Baskerville', 'Georgia', serif;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.legend-item .swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 0.25em;
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+path.selected {
+  fill: var(--color);
+}
+
+.legend-item.selected {
+  background-color: var(--color);
+}
