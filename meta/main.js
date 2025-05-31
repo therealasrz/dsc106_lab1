@@ -3,6 +3,7 @@ let xScale, yScale
 let commitProgress = 100;
 let timeScale;
 let filteredCommits = [];
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -171,6 +172,48 @@ function renderCommitInfo(data, commits) {
     tooltip.style.top = `${event.clientY + 10}px`;
   }
 
+  function updateFileDisplay(filteredCommits) {
+
+  let allLines = filteredCommits.flatMap(d => d.lines);
+  let files = d3
+    .groups(allLines, d => d.file)
+    .map(([name, lines]) => {
+      return { name, lines };
+    });
+
+  let filesContainer = d3
+    .select('#files')
+    .selectAll('div')
+    .data(files, d => d.name) 
+    .join(
+      enter =>
+        enter
+          .append('div')
+          .call(div => {
+            div.append('dt')
+               .append('code');
+            div.select('dt')
+               .append('small');
+            div.append('dd');
+          }),
+      update => update, 
+      exit => exit.remove()
+    );
+
+filesContainer.select('dt > code')
+    .text(d => d.name);
+
+filesContainer.select('dt > small')
+    .text(d => `${d.lines.length} lines`);
+
+filesContainer.select('dd')
+    .selectAll('div')     
+    .data(d => d.lines)    
+    .join('div')
+      .attr('class', 'loc')
+      .style('--color', d => colors(d.type));
+}
+
   function brushed(event) {
     const selection = event.selection;
   
@@ -231,7 +274,6 @@ function renderCommitInfo(data, commits) {
   }
 
  function onTimeSliderChange() {
-  // 1. Compute commitProgress & commitMaxTime exactly as before
   commitProgress = document.getElementById('commit-progress').value;
   commitMaxTime = timeScale.invert(commitProgress);
 
@@ -241,20 +283,17 @@ function renderCommitInfo(data, commits) {
       timeStyle: "short" 
     });
 
-  // 2. Filter "commits" into "filteredCommits"
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
 
-  // 3. Update the existing scatter plot—no more removal/append
   updateScatterPlot(data, filteredCommits);
-
-  // 4. Update the stats‐grid so it shows stats for filteredCommits
   updateCommitInfo(data, filteredCommits);
+  updateFileDisplay(filteredCommits);
 }
 
 
 function updateScatterPlot(data, commits) {
   const svg = d3.select('#chart').select('svg');
-  
+
   const width = 1000;
   const height = 600;
   const margin = { top: 10, right: 10, bottom: 30, left: 20 };
@@ -267,30 +306,23 @@ function updateScatterPlot(data, commits) {
     height: height - margin.top - margin.bottom,
   };
 
-
-  // 3b. Re‐compute xScale's domain on the newly‐filtered commit datetimes:
   xScale.domain(d3.extent(commits, (d) => d.datetime));
 
-  // 3c. Recompute radius scale
   const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
   const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
 
-  // 3d. Build a new bottom axis using the updated xScale
   const xAxis = d3.axisBottom(xScale);
 
-  // 3e. CLEAR OUT the old x‐axis group, then re‐draw it
   const xAxisGroup = svg.select('g.x-axis');
   xAxisGroup.selectAll('*').remove();
   xAxisGroup.call(xAxis);
 
-  // 3f. Grab the group that holds all the dots:
   const dots = svg.select('g.dots');
 
-  // 3g. Sort filtered commits by totalLines (largest → smallest), then re-bind and re-position circles
   const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
   dots
     .selectAll('circle')
-    .data(sortedCommits, (d) => d.id)   // use `d.id` as the key so D3 can handle enter/update/exit
+    .data(sortedCommits, (d) => d.id)  
     .join(
       (enter) =>
         enter
@@ -368,6 +400,5 @@ function getFilteredData(commits) {
   renderScatterPlot(data, commits);
   
   document.getElementById('commit-progress').addEventListener('input', onTimeSliderChange);
-
   onTimeSliderChange(); 
 

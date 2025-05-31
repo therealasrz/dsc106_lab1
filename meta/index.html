@@ -9,7 +9,9 @@
 </head>
 <body>
     <h1>Meta</h1>
+
     <h2>Summary</h2>
+
     <div style="display: flex; align-items: baseline; margin-bottom: 20px;">
   <label for="commit-progress">Show commits up to:</label>
 <input
@@ -21,12 +23,20 @@
   step="1"
 />
   <time id="commit-time-display" style="margin-left: auto;"></time>
-  
+
 </div>
-    <div id="stats"></div>
+
+  <div id="stats"></div>
+
+  <h2>Files in the Filtered Commits</h2>
+  <dl id="files">
+  
+  </dl>
 
     <h2>Commits by time of day</h2>
+
     <div id="chart"></div>
+
     <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd><a href="" id="commit-link" target="_blank"></a></dd>
