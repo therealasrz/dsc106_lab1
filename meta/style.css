@@ -145,6 +145,7 @@
   
   circle.selected {
     fill: #ff6b6b;
+<<<<<<< HEAD
   }
 
   .stat-grid {
@@ -184,3 +185,6 @@
   font-weight: bold;
   min-width: 200px;
 }
+=======
+  }
+>>>>>>> parent of 38903ea (update slider)
