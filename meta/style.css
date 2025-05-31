@@ -146,3 +146,15 @@
   circle.selected {
     fill: #ff6b6b;
   }
+
+  .stat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px; 
+}
+
+#commit-progress {
+  width: 70%;
+  vertical-align: middle;
+}

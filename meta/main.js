@@ -1,5 +1,7 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 let xScale, yScale
+let commitProgress = 100;
+let timeScale;
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -58,7 +60,8 @@ function renderCommitInfo(data, commits) {
   }
 
   function renderScatterPlot(data, commits) {
-    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+    const filteredCommits = commits.filter(d => d.datetime <= commitMaxTime);
+    const sortedCommits = d3.sort(filteredCommits, d => -d.totalLines);
   
     const width = 1000;
     const height = 600;
@@ -216,8 +219,33 @@ function renderCommitInfo(data, commits) {
       `;
     }
   }
+
+  function onTimeSliderChange() {
+  commitProgress = document.getElementById('commit-progress').value;
+  commitMaxTime = timeScale.invert(commitProgress);
+
+  document.getElementById('commit-time-display').textContent = 
+    commitMaxTime.toLocaleString(undefined, { 
+      dateStyle: "long", 
+      timeStyle: "short" 
+    });
+  
+  d3.select('#chart').selectAll('svg').remove();
+  renderScatterPlot(data, commits);
+}
   
   const data = await loadData();
   const commits = processCommits(data);
+
+  timeScale = d3.scaleTime()
+  .domain([
+    d3.min(commits, d => d.datetime),
+    d3.max(commits, d => d.datetime)
+  ])
+  .range([0, 100]);
+
+  let commitMaxTime = timeScale.invert(commitProgress);
   renderCommitInfo(data, commits);
   renderScatterPlot(data, commits);
+  document.getElementById('commit-progress').addEventListener('input', onTimeSliderChange);
+  onTimeSliderChange(); 
