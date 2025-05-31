@@ -10,8 +10,7 @@
 <body>
     <h1>Meta</h1>
     <h2>Summary</h2>
-<<<<<<< HEAD
-
+    
     <div style="display: flex; align-items: baseline; margin-bottom: 20px;">
   <label style="flex: 1;">
     Show commits until:
@@ -20,9 +19,14 @@
   <time id="commit-time-display" style="margin-left: auto;"></time>
 </div>
 
+<div class="time-control">
+  <label>
+    Show commits until:
+    <input type="range" id="commit-progress" min="0" max="100" value="100">
+  </label>
+  <time id="commit-time-display"></time>
+</div>
 
-=======
->>>>>>> parent of 38903ea (update slider)
     <div id="stats"></div>
 
     <h2>Commits by time of day</h2>

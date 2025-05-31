@@ -145,46 +145,4 @@
   
   circle.selected {
     fill: #ff6b6b;
-<<<<<<< HEAD
   }
-
-  .stat-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px; 
-}
-
-#commit-progress {
-  width: 70%;
-  vertical-align: middle;
-}
-
-.time-control {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
-
-.time-control label {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-#commit-progress {
-  flex: 1;
-}
-
-#commit-time-display {
-  margin-left: 20px;
-  font-weight: bold;
-  min-width: 200px;
-}
-=======
-  }
->>>>>>> parent of 38903ea (update slider)

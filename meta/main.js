@@ -1,11 +1,8 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 let xScale, yScale
-<<<<<<< HEAD
 let commitProgress = 100;
 let timeScale;
 let filteredCommits = [];
-=======
->>>>>>> parent of 38903ea (update slider)
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -223,7 +220,6 @@ function renderCommitInfo(data, commits) {
       `;
     }
   }
-<<<<<<< HEAD
 
   function onTimeSliderChange() {
   commitProgress = document.getElementById('commit-progress').value;
@@ -358,10 +354,3 @@ function getFilteredData(commits) {
   
   document.getElementById('commit-progress').addEventListener('input', onTimeSliderChange);
   onTimeSliderChange(); 
-=======
-  
-  const data = await loadData();
-  const commits = processCommits(data);
-  renderCommitInfo(data, commits);
-  renderScatterPlot(data, commits);
->>>>>>> parent of 38903ea (update slider)
