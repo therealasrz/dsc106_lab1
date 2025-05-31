@@ -1,4 +1,6 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
+
 let xScale, yScale
 let commitProgress = 100;
 let timeScale;
@@ -18,7 +20,7 @@ async function loadData() {
 }
 
 function processCommits(data) {
-  return d3.groups(data, d => d.commit).map(([commit, lines]) => {
+  let arr = d3.groups(data, d => d.commit).map(([commit, lines]) => {
     let first = lines[0];
     let { author, date, time, timezone, datetime } = first;
     let ret = {
@@ -40,6 +42,8 @@ function processCommits(data) {
     });
     return ret;
   });
+
+  return arr.sort((a, b) => a.datetime - b.datetime);
 }
 
 function renderCommitInfo(data, commits) {
@@ -380,11 +384,44 @@ function getFilteredData(commits) {
   const commitIds = new Set(commits.map(c => c.id));
   return data.filter(d => commitIds.has(d.commit));
 }
+
+function onStepEnter(response) {
+
+  const commitData = response.element.__data__;
+  const selectedDate = commitData.datetime;
+
+  filteredCommits = commits.filter(d => d.datetime <= selectedDate);
+
+  updateScatterPlot(data, filteredCommits);
+  updateCommitInfo(data, filteredCommits);
+  updateFileDisplay(filteredCommits);
+}
   
   const data = await loadData();
   const commits = processCommits(data);
 
-  
+  d3.select('#scatter-story')
+  .selectAll('.step')
+  .data(commits)
+  .join('div')
+    .attr('class', 'step')
+    .html((d, i) => {
+      return `
+        <p>
+          On ${d.datetime.toLocaleString('en', {
+            dateStyle: 'full',
+            timeStyle: 'short',
+          })},<br/>
+          I made <a href="${d.url}" target="_blank">${
+            i > 0 ? 'another glorious commit' : 'my first commit, and it was glorious'
+          }</a>.<br/>
+          I edited <strong>${d.totalLines}</strong> lines across <strong>${
+            d3.rollups(d.lines, v => v.length, v => v.file).length
+          }</strong> files.<br/>
+          Then I looked over all I had made, and I saw that it was very good.
+        </p>
+      `;
+    });
 
   timeScale = d3.scaleTime()
   .domain([
@@ -402,3 +439,12 @@ function getFilteredData(commits) {
   document.getElementById('commit-progress').addEventListener('input', onTimeSliderChange);
   onTimeSliderChange(); 
 
+
+const scroller = scrollama();
+scroller
+  .setup({
+    container: '#scrolly-1',
+    step: '#scrolly-1 .step',
+    offset: 0.5
+  })
+  .onStepEnter(onStepEnter);

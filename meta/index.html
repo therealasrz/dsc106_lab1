@@ -1,64 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Meta Commit Stats</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Meta Commit Stats</title>
 </head>
 <body>
-    <h1>Meta</h1>
+  <h1>Meta</h1>
 
-    <h2>Summary</h2>
-
-    <div style="display: flex; align-items: baseline; margin-bottom: 20px;">
-  <label for="commit-progress">Show commits up to:</label>
-<input
-  type="range"
-  id="commit-progress"
-  min="0"
-  max="100"
-  value="100"
-  step="1"
-/>
-  <time id="commit-time-display" style="margin-left: auto;"></time>
-
-</div>
+  <h2>Summary</h2>
+  <div style="display: flex; align-items: baseline; margin-bottom: 20px;">
+    <label for="commit-progress">Show commits up to:</label>
+    <input
+      type="range"
+      id="commit-progress"
+      min="0"
+      max="100"
+      value="100"
+      step="1"
+    />
+    <time id="commit-time-display" style="margin-left: auto;"></time>
+  </div>
 
   <div id="stats"></div>
 
-  <h2>Files in the Filtered Commits</h2>
-  <dl id="files">
-  
-  </dl>
+  <!-- ========== Section Header ========== -->
+  <h2>Commits by time of day</h2>
 
-    <h2>Commits by time of day</h2>
+  <!-- ========== Scrollytelling Container ========== -->
+  <div id="scrolly-1">
+    <!-- LEFT COLUMN: Narrative text (.step blocks appear here) -->
+    <div id="scatter-story">
+      <!-- JavaScript will populate multiple:
+           <div class="step">…text about commit #1…</div>
+           <div class="step">…text about commit #2…</div>
+           etc.
+      -->
+    </div>
 
-    <div id="chart"></div>
+    <!-- RIGHT COLUMN: Sticky chart area -->
+    <div id="scatter-plot">
+      <!-- THIS DIV must fill 70vh vertically and be sticky -->
+      <div id="chart">
+        <!-- D3 will append <svg viewBox="0 0 1000 600">…</svg> here -->
+      </div>
 
-    <dl id="commit-tooltip" class="info tooltip" hidden>
+      <dl id="commit-tooltip" class="info tooltip" hidden>
         <dt>Commit</dt>
         <dd><a href="" id="commit-link" target="_blank"></a></dd>
-      
         <dt>Date</dt>
         <dd id="commit-date"></dd>
-      
         <dt>Time</dt>
         <dd id="commit-time"></dd>
-      
         <dt>Author</dt>
         <dd id="commit-author"></dd>
-      
         <dt>Lines Edited</dt>
         <dd id="commit-lines"></dd>
-        
       </dl>
-    
+
       <p id="selection-count">No commits selected</p>
       <dl id="language-breakdown" class="stats"></dl>
+    </div> <!-- end of #scatter-plot -->
+  </div>   <!-- end of #scrolly-1 -->
 
-    <script type="module" src="../global.js"></script> 
-    <script type="module" src="main.js"></script>
+  <h2>Files in the Filtered Commits</h2>
+  <dl id="files"></dl>
+
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -192,3 +192,73 @@
   padding: 4px 0;
   border-bottom: 1px solid #eee;
 }
+
+#scrolly-1 {
+  display: flex;
+  gap: 1rem; 
+}
+
+#scrolly-1 > * {
+  flex: 1;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 70vh;     
+  overflow: visible;
+}
+
+.step {
+  padding-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#chart {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#chart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;    
+  overflow: visible;
+}
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+#scrolly-1 > * {
+  flex: 1;
+}
+#scatter-story {
+  flex: 1;         
+  position: relative; 
+  padding-right: 1rem;
+  overflow-y: visible;
+}
+.step {
+  padding-bottom: 3rem; 
+  font-size: 1rem;
+  line-height: 1.5;
+}
